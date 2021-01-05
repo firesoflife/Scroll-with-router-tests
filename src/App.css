@@ -1,38 +1,90 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: 'Montserrat';
+}
+
+body {
+  background-color: lightgoldenrodyellow;
+}
+
+a,
+li {
+  color: seashell;
+  text-decoration: none;
+}
+
+.active {
+  color: cornflowerblue;
+}
+
+/* General Styles  */
 .App {
+  padding: 3rem 0;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.App h1 {
+  padding-bottom: 2rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* Nav */
+.nav {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  justify-content: space-evenly;
+  width: 100%;
+  height: 80px;
+  position: fixed;
+  background-color: coral;
+  z-index: 10;
+  opacity: 0.8;
 }
 
-.App-link {
-  color: #61dafb;
+li {
+  cursor: pointer;
+  list-style: none;
+  font-size: 1.5rem;
+  color: seashell;
+  padding: 1.2rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Home */
+.home {
+  display: block;
+  position: relative;
+  top: 80px;
+  padding: 3rem;
+  background-color: seagreen;
+  color: seashell;
+  height: 100rem;
+}
+
+/* Books */
+
+.books {
+  margin-top: 80px;
+  height: 100rem;
+  background: slategrey;
+}
+
+.books h1,
+.music h1,
+.projects h1 {
+  padding-top: 3rem;
+  color: seashell;
+}
+
+.music {
+  /* margin-top: 80px; */
+  height: 100rem;
+  background: skyblue;
+}
+
+.projects {
+  height: 100rem;
+  background: teal;
 }

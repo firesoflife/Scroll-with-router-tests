@@ -1,25 +1,36 @@
-import logo from './logo.svg';
 import './App.css';
+//  Components
+import Nav from './components/Nav';
+// Pages
+import Home from './pages/Home';
+import Books from './pages/Books';
+import Music from './pages/Music';
+import Projects from './pages/Projects';
 
-function App() {
+// ScrollableSection package
+import {
+  ScrollingProvider,
+  useScrollSection,
+  Section,
+} from 'react-scroll-section';
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ScrollingProvider>
+      <Nav />
+      <Section id="home" component={Home}>
+        <Home />
+      </Section>
+      <Section id="books">
+        <Books />
+      </Section>
+
+      <Section id="music">
+        <Music />
+      </Section>
+      <Projects />
+    </ScrollingProvider>
   );
-}
+};
 
 export default App;
