@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { Link } from 'react-router-dom';
+
 // ScrollableSection package
 import {
   ScrollingProvider,
@@ -15,21 +17,15 @@ const Nav = () => {
   return (
     <ul className="nav">
       <li onClick={homeSection.onClick} selected={homeSection.selected}>
-        Home
+        <Link to="/home">Home</Link>
       </li>
       <li onClick={booksSection.onClick} selected={booksSection.selected}>
-        Books
+        <Link to="/books">Books</Link>
       </li>
       <li onClick={musicSection.onClick} selected={musicSection.selected}>
-        {' '}
-        Music
+        <Link to="/music">Music</Link>
       </li>
       <li>Projects</li>
-      {/* {sections.map(({ id, onClick, selected }) => (
-        <li key={id} onClick={onClick} selected={selected}>
-          {id.toUpperCase()}
-        </li>
-      ))} */}
     </ul>
   );
 };
