@@ -7,6 +7,8 @@ import Books from './pages/Books';
 import Music from './pages/Music';
 import Projects from './pages/Projects';
 
+import { Route, Switch } from 'react-router-dom';
+
 // ScrollableSection package
 import {
   ScrollingProvider,
@@ -16,20 +18,26 @@ import {
 
 const App = () => {
   return (
-    <ScrollingProvider>
-      <Nav />
-      <Section id="home" component={Home}>
-        <Home />
-      </Section>
-      <Section id="books">
-        <Books />
-      </Section>
+    <Switch>
+      <ScrollingProvider>
+        <Nav />
+        <Route>
+          <Section id="home">
+            <Home />
+          </Section>
+          <Section id="books">
+            <Books />
+          </Section>
 
-      <Section id="music">
-        <Music />
-      </Section>
-      <Projects />
-    </ScrollingProvider>
+          <Section id="music">
+            <Music />
+          </Section>
+        </Route>
+        <Route exact path="/projects">
+          <Projects />
+        </Route>
+      </ScrollingProvider>
+    </Switch>
   );
 };
 
